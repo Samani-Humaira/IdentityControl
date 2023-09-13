@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Account</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <div class="above">
+    <div id="editAll">
+    <h2>Edit: <%= user.username %></h2>
+    <form method="post" action="/user/<%= user.id %>?_method=PATCH">
+
+        <textarea class="design" type ="text" name="username" placeholder="Edit Your Username"><%= user.username %></textarea> 
+        <input required class="input" type="password" name="password" placeholder="Enter password"> 
+        <button style="background-color:#35A29F;">Save</button>
+    </form>
+    </div>
+    </div>
+</body>
+</html> 

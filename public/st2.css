@@ -1,0 +1,12 @@
+h2{
+    text-align:center;
+}
+button{
+    background-color: black;
+    color:white;
+    opacity:0.9;
+}
+form button:hover{
+    transform: scaleX(1.1);
+    opacity: 1;
+}

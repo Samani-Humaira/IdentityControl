@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete Account</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <div class="above">
+        <div id="editAll">
+    <h2>Delete: <%= user.username %></h2>
+    <form method="post" action="/user/<%= user.id %>?_method=DELETE">
+        <input  required class="input" type="email" placeholder="Enter email" name="email">
+        <input required class="input" type="password" name="password" placeholder="Enter a Password">
+          <button style="background-color: rgb(210, 14, 14);;" type="submit">Delete</button>
+
+    </form>
+    </div>
+    </div>
+
+</body>
+</html>
