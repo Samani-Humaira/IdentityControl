@@ -1,3 +1,4 @@
+//Requiring necessary packages
 const express = require('express');
 const app = express()
 const sql = require('mysql2');
@@ -31,22 +32,22 @@ let randomUser = ()=>{
     ];
 }
 
-// let data = [];
-// for(let i=0;i<=50;i++){
-//    let user = randomUser();  //to generate data for the table
-//    data.push(user);
-// }
-// let q = `insert into student (id,username,email,password) values ?`;
+let data = [];
+for(let i=0;i<=50;i++){
+   let user = randomUser();  //to generate data for the table
+   data.push(user);
+}
+let q = `insert into student (id,username,email,password) values ?`;
 
-// try{
-//     connection.query(q,[data],(err,result) =>{
-//         if(err) throw err;
-//         console.log("Successfully added data into a databases");
-//     });
-// }
-// catch(err){
-//     console.log("Error occured");
-// }
+try{
+    connection.query(q,[data],(err,result) =>{
+        if(err) throw err;
+        console.log("Successfully added data into a databases");
+    });
+}
+catch(err){
+    console.log("Error occured");
+}
 
 //show No. of users
 app.get("/",(req,res) =>{
@@ -79,7 +80,7 @@ app.get("/user",(req,res) =>{
 });
 
 
-//edit users information if ppassword is correct
+//edit users information if password is correct
 
 app.get("/user/:id/edit",(req,res) =>{
     let {id} = req.params;
@@ -115,7 +116,6 @@ app.patch("/user/:id",(req,res) =>{
                     console.log("Updated Successfully");
                     res.redirect("/user");
                 }
-               
             });
         }
     });
